@@ -7,17 +7,14 @@ public class exercicio1_sozinho {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		
-		int num;
+		int N = sc.nextInt();
 		
-		System.out.println("O numero inteiro é negativo?: ");
-		num = sc.nextInt();
-		
-		if (num > 0) {
-		System.out.println("NAO NEGATIVO");
-		} 
-			else {
-		System.out.println("NEGATIVO");
-			}
+		if (N % 2 == 0) {
+			System.out.println("PAR");
+		}
+		else {
+			System.out.println("IMPAR");
+		}
 		
 		sc.close();
 
