@@ -1,35 +1,38 @@
 package estrutura_condicional;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class exercicio1_sozinho {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner (System.in);
-		
-		int codigo = sc.nextInt();
-		int quantidade = sc.nextInt();
-		
-		double total = 0;
-		
-		if (codigo == 1) {
-			total = quantidade * 4.0;
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		double salario = sc.nextDouble();
+
+		double imposto;
+		if (salario <= 2000.0) {
+			imposto = 0.0;
 		} 
-		else if (codigo == 2){
-			total =  quantidade * 4.5;
-		}
-		else if (codigo == 3) {
-			total = quantidade * 5.0;
-		}
-		else if (codigo == 4) {
-			total = quantidade * 2.0;
-		}
-		else if (codigo == 5) {
-			total = quantidade * 1.5;
-		}
 		
-		System.out.printf("Total: R$ %.2f%n", total);
+		else if (salario <= 3000.0) {
+			imposto = (salario - 2000.0) * 0.08;
+		} 
 		
+		else if (salario <= 4500.0) {
+			imposto = (salario - 3000.0) * 0.18 + 1000.0 * 0.08;
+		} 
+		
+		else {
+			imposto = (salario - 4500.0) * 0.28 + 1500.0 * 0.18 + 1000.0 * 0.08;
+		}
+		if (imposto == 0.0) {
+			System.out.println("Isento");
+		} 
+		else {
+			System.out.printf("R$ %.2f%n", imposto);
+		}
 		sc.close();
-		}
 	}
+}
