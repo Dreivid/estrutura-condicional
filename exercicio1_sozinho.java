@@ -7,17 +7,20 @@ public class exercicio1_sozinho {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		
-		int A = sc.nextInt();
-		int B = sc.nextInt();
+		int HI = sc.nextInt();
+		int HF = sc.nextInt();
 		
-		if (A % B == 0 || B % A == 0) {
-		System.out.println("Sao Multiplos ");
-		} else {
-			System.out.println("Nao sao Multiplos");
+		int duracao;
+				
+		if (HI < HF) {
+			duracao = HF - HI;
+		}
+		else {
+			duracao = 24 - HI + HF;
+		}
 		
-			
-			sc.close();
+		System.out.println("O JOGO DUROU " + duracao + "HORA(S)");
+		
+		sc.close();
 		}
 	}
-
-}
